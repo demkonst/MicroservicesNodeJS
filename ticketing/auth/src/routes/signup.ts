@@ -12,7 +12,7 @@ router.post('/api/users/signup', [
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      throw new Error('Invalid email or password');
+      return res.status(400).send(errors.array());
     }
 
     const { email, password } = req.body;
