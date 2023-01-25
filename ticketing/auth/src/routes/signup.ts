@@ -12,7 +12,6 @@ router.post('/api/users/signup', [
   body('password').trim().isLength({ min: 4, max: 20 })
 ],
   async (req: Request, res: Response) => {
-
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -33,7 +32,7 @@ router.post('/api/users/signup', [
     const userJwt = jwt.sign({
       sub: user.id,
       email: user.email
-    }, 'asdf');
+    }, process.env.JWT_KEY!);
 
     req.session = {
       jwt: userJwt
