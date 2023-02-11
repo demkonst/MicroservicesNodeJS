@@ -3,13 +3,19 @@
         "browser": true,
         "es2021": true
     },
-    "extends": "standard-with-typescript",
-    "overrides": [
+    "extends": [
+        "standard-with-typescript",
+        "prettier"
     ],
+    "overrides": [],
     "parserOptions": {
+        "project": "**/tsconfig.json",
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
     "rules": {
+        "@typescript-eslint/no-namespace": "off",
+        "@typescript-eslint/strict-boolean-expressions": "off",
+        "@typescript-eslint/no-non-null-assertion": "off"
     }
 }
