@@ -1,4 +1,4 @@
-import { RequestHandler } from 'express';
+import type { RequestHandler } from 'express';
 import jwt from 'jsonwebtoken';
 
 interface UserPayload {
@@ -16,7 +16,8 @@ declare global {
 
 export const currentUser: RequestHandler = (req, res, next) => {
   if (!req.session?.jwt) {
-    return next();
+    next();
+    return
   }
 
   try {
