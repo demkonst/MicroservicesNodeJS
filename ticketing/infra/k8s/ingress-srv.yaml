@@ -9,7 +9,7 @@ metadata:
     name: myingress
 spec:
   rules:
-    - host: ticketing.dev
+    - host: ticketing.local
       http:
         paths:
           - pathType: Prefix

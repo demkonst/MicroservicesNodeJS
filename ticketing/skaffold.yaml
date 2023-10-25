@@ -6,7 +6,7 @@ build:
   local:
     push: false
   artifacts:
-    - image: demkonst/blogapp-auth
+    - image: demkonst/ticketing-auth
       context: auth
       docker:
         dockerfile: Dockerfile
